@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Inter:wght@300;400;500&display=swap');
         
         :root {
-            --neon-blue: #00f3ff;
+            --neon-blue: #808888;
             --neon-purple: #9d00ff;
             --neon-green: #00ff9d;
             --bg-dark: #050510;
@@ -185,21 +185,40 @@
         }
         
         .hero {
-            text-align: center;
-            padding-top: 20vh;
-        }
-        
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: var(--text-dim);
-        }
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.scroll-indicator {
+    margin-top: 3rem;
+}
         
         .scroll-indicator {
             position: absolute;
@@ -309,54 +328,7 @@
             font-weight: 500;
         }
         
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
         
-        .project-card {
-            background: rgba(10, 10, 25, 0.7);
-            border: 1px solid rgba(157, 0, 255, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.5s ease, box-shadow 0.5s ease;
-            position: relative;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 0 25px rgba(157, 0, 255, 0.3);
-        }
-        
-        .project-image {
-            height: 160px;
-            background-size: cover;
-            background-position: center;
-            border-bottom: 2px solid rgba(157, 0, 255, 0.3);
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            color: var(--neon-purple);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .project-desc {
-            font-size: 0.9rem;
-            color: var(--text-dim);
-        }
-        
-        .timeline {
-            position: relative;
-            margin: 2rem auto;
-            max-width: 800px;
-        }
         
         .timeline::before {
             content: '';
@@ -774,16 +746,19 @@
     
     <div class="content">
         <!-- Hero Section -->
-        <section id="home" class="hero section-active">
-            <div class="section-container">
-                <h1>SHIBI KUMAR S</h1>
-                <p class="subtitle">Future DevOps Engineer & Computer Science Student</p>
-                <div class="scroll-indicator">
-                    <i class="fas fa-chevron-down"></i>
-                    <span>Scroll to explore</span>
-                </div>
-            </div>
-        </section>
+<section id="home" class="hero section-active">
+    <div class="section-container">
+        <div class="hero-content">
+            <img src="my-photo.jpeg" alt="Shibi Kumar S" class="profile-photo">
+            <h1>SHIBI KUMAR S</h1>
+            <p class="subtitle">DevOps Engineer & Computer Science Student</p>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Scroll to explore</span>
+        </div>
+    </div>
+</section>
         
         <!-- About Section -->
         <section id="about" class="about">
@@ -811,97 +786,936 @@
         <section id="skills">
             <div class="section-container">
                 <h2>Technical Skills</h2>
-                <div class="skills-container">
-                    <!-- Frontend -->
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon">
-                        <span class="skill-name">React</span>
+                
+                <!-- Frontend Development -->
+                <div class="skills-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="skill-icon">
+                            <span class="skill-name">React</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-icon">
+                            <span class="skill-name">HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon">
+                            <span class="skill-name">CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon">
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="skill-icon">
+                            <span class="skill-name">TypeScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" class="skill-icon">
+                            <span class="skill-name">Redux</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" alt="Tailwind CSS" class="skill-icon">
+                            <span class="skill-name">Tailwind CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass" class="skill-icon">
+                            <span class="skill-name">Sass</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="skill-icon">
+                            <span class="skill-name">Vue.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="skill-icon">
+                            <span class="skill-name">Next.js</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-icon">
-                        <span class="skill-name">HTML5</span>
+                </div>
+        
+                <!-- Backend Development -->
+                <div class="skills-category">
+                    <h3>Backend Development</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="skill-icon">
+                            <span class="skill-name">Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="skill-icon">
+                            <span class="skill-name">Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="skill-icon">
+                            <span class="skill-name">Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" class="skill-icon">
+                            <span class="skill-name">Flask</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" class="skill-icon">
+                            <span class="skill-name">Spring Boot</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL" class="skill-icon">
+                            <span class="skill-name">GraphQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="FastAPI" class="skill-icon">
+                            <span class="skill-name">FastAPI</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-icon">
-                        <span class="skill-name">CSS3</span>
+                </div>
+                
+                <!-- Programming Languages -->
+                <div class="skills-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-icon">
+                            <span class="skill-name">Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon">
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-icon">
+                            <span class="skill-name">C#</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-icon">
+                            <span class="skill-name">C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" class="skill-icon">
+                            <span class="skill-name">Go</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg" alt="Rust" class="skill-icon">
+                            <span class="skill-name">Rust</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="skill-icon">
+                            <span class="skill-name">PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" alt="Ruby" class="skill-icon">
+                            <span class="skill-name">Ruby</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-icon">
-                        <span class="skill-name">JavaScript</span>
+                </div>
+                
+                <!-- DevOps & Cloud -->
+                <div class="skills-category">
+                    <h3>DevOps & Cloud</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-icon">
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="skill-icon">
+                            <span class="skill-name">Kubernetes</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon">
+                            <span class="skill-name">Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins" class="skill-icon">
+                            <span class="skill-name">Jenkins</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" class="skill-icon">
+                            <span class="skill-name">AWS</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="skill-icon">
+                            <span class="skill-name">Azure</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="skill-icon">
+                            <span class="skill-name">GCP</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform" class="skill-icon">
+                            <span class="skill-name">Terraform</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Actions" class="skill-icon">
+                            <span class="skill-name">GitHub Actions</span>
+                        </div>
                     </div>
-                    
-                    <!-- Programming Languages -->
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-icon">
-                        <span class="skill-name">Java</span>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skills-category">
+                    <h3>Databases</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon">
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-icon">
+                            <span class="skill-name">MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="skill-icon">
+                            <span class="skill-name">PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" class="skill-icon">
+                            <span class="skill-name">Redis</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="skill-icon">
+                            <span class="skill-name">Firebase</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" class="skill-icon">
+                            <span class="skill-name">SQL Server</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle" class="skill-icon">
+                            <span class="skill-name">Oracle</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-icon">
-                        <span class="skill-name">Python</span>
+                </div>
+                
+                <!-- Data Science & ML -->
+                <div class="skills-category">
+                    <h3>Data Science & Machine Learning</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-icon">
+                            <span class="skill-name">TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-icon">
+                            <span class="skill-name">PyTorch</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-icon">
+                            <span class="skill-name">Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-icon">
+                            <span class="skill-name">NumPy</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" class="skill-icon">
+                            <span class="skill-name">Jupyter</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg" alt="Kaggle" class="skill-icon">
+                            <span class="skill-name">Kaggle</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" class="skill-icon">
+                            <span class="skill-name">R</span>
+                        </div>
                     </div>
-                    
-                    <!-- DevOps Tools -->
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-icon">
-                        <span class="skill-name">Docker</span>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="skills-category">
+                    <h3>Mobile Development</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift" class="skill-icon">
+                            <span class="skill-name">Swift</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin" class="skill-icon">
+                            <span class="skill-name">Kotlin</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="skill-icon">
+                            <span class="skill-name">Flutter</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" class="skill-icon">
+                            <span class="skill-name">Dart</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" class="skill-icon">
+                            <span class="skill-name">React Native</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android" class="skill-icon">
+                            <span class="skill-name">Android</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="iOS" class="skill-icon">
+                            <span class="skill-name">iOS</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-icon">
-                        <span class="skill-name">Git</span>
-                    </div>
-                    
-                    <!-- Databases -->
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skill-icon">
-                        <span class="skill-name">MySQL</span>
-                    </div>
-                    <div class="skill-item">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="skill-icon">
-                        <span class="skill-name">MongoDB</span>
+                </div>
+                
+                <!-- Additional Tools -->
+                <div class="skills-category">
+                    <h3>Additional Tools & Technologies</h3>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" alt="Webpack" class="skill-icon">
+                            <span class="skill-name">Webpack</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/babel/babel-original.svg" alt="Babel" class="skill-icon">
+                            <span class="skill-name">Babel</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="skill-icon">
+                            <span class="skill-name">Figma</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="skill-icon">
+                            <span class="skill-name">Photoshop</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" alt="Illustrator" class="skill-icon">
+                            <span class="skill-name">Illustrator</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" class="skill-icon">
+                            <span class="skill-name">Jira</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/confluence/confluence-original.svg" alt="Confluence" class="skill-icon">
+                            <span class="skill-name">Confluence</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon">
+                            <span class="skill-name">VS Code</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetbrains/jetbrains-original.svg" alt="JetBrains IDEs" class="skill-icon">
+                            <span class="skill-name">JetBrains IDEs</span>
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            
         </section>
         
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="section-container">
-                <h2>Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg');"></div>
-                        <div class="project-content">
-                            <h3 class="project-title">Automatic Seed Sowing Robot</h3>
-                            <p class="project-desc">Developed an Arduino-based robot to automate the seed sowing process, improving overall production yields.</p>
+<!-- Projects Section -->
+<section id="projects">
+    <div class="section-container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <!-- Myoelectric Arm Project -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg');"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Myoelectric Prosthetic Arm</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">EMG</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">A low-cost prosthetic hand that uses myoelectric (EMG) signals from muscle movements to control artificial hand functionality. Features MIT license.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Shibikumars/myoelectricarm" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                        <a href="#" class="project-link demo-link">
+                            <i class="fas fa-video"></i> Demo Video
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-</div>
-</div>
+            <!-- Automatic Seed Sowing Project -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original-wordmark.svg');"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Automatic Seed Sowing Robot</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">C++</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">Arduino-based robot that automates the seed sowing process with precision control, optimizing seed placement and improving agricultural efficiency.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link view-only">
+                            <i class="far fa-eye"></i> View Only
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-<div class="project-card">
-    <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg');"></div>
-    <div class="project-content">
-        <h3 class="project-title">Low-Cost Prosthetic Hand</h3>
-        <p class="project-desc">Designed and built a cost-effective prosthetic hand controlled by EMG signals from the forearm for basic hand functionality.</p>
+            <!-- AI Disaster App -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg');"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">AI Disaster Management App</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">An AI-powered application for disaster response and management, providing real-time data analysis and resource allocation recommendations during emergencies.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Shibikumars/ai-disaster-app" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plant Monitor Project -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg');"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Plant Monitor Dashboard</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">Dashboard</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">Inventify Team Demo Dashboard for plant monitoring, featuring real-time data visualization of plant health metrics and environmental conditions.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Shibikumars/PLant_MOnitor_PRoject" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Guardian -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg');"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Community Guardian</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Security</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">A community safety platform that helps neighborhoods track and respond to safety concerns, featuring real-time alerts and community coordination tools.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Shibikumars/community_gaurdian" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ghibli Art Web -->
+            <div class="project-card">
+                <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg');"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Ghibli Art Web</h3>
+                        <div class="project-tech">
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Web Development</span>
+                            <span class="tech-tag">Animation</span>
+                        </div>
+                    </div>
+                    <p class="project-desc">An interactive web gallery showcasing Studio Ghibli inspired artwork with animations and user interaction elements.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Shibikumars/ghibli_art_web" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GitHub Repository Showcase -->
+        <div class="github-showcase">
+            <h3>More Projects on GitHub</h3>
+            <a href="https://github.com/Shibikumars" class="github-profile-link" target="_blank">
+                <i class="fab fa-github"></i> View All Repositories
+            </a>
+            <div class="github-repos">
+                <!-- Additional GitHub repositories -->
+                <div class="repo-item">
+                    <div class="repo-name">
+                        <i class="fas fa-code-branch"></i>
+                        <a href="https://github.com/Shibikumars/VUL_DETECTOR" target="_blank">VUL_DETECTOR</a>
+                    </div>
+                    <p class="repo-desc">Vulnerability detection system</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang">Updated recently</span>
+                    </div>
+                </div>
+                
+                <div class="repo-item">
+                    <div class="repo-name">
+                        <i class="fas fa-code-branch"></i>
+                        <a href="https://github.com/Shibikumars/new_vul" target="_blank">new_vul</a>
+                    </div>
+                    <p class="repo-desc">JavaScript vulnerability detection</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang js">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="repo-item">
+                    <div class="repo-name">
+                        <i class="fas fa-code-branch"></i>
+                        <a href="https://github.com/Shibikumars/weather-dashboard" target="_blank">weather-dashboard</a>
+                    </div>
+                    <p class="repo-desc">Interactive weather forecasting application</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang js">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="repo-item">
+                    <div class="repo-name">
+                        <i class="fas fa-code-branch"></i>
+                        <a href="https://github.com/Shibikumars/mgd-crud-mangoose" target="_blank">mgd-crud-mangoose</a>
+                    </div>
+                    <p class="repo-desc">MongoDB CRUD operations with Mongoose</p>
+                    <div class="repo-meta">
+                        <span class="repo-lang js">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-<div class="project-card">
-    <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg');"></div>
-    <div class="project-content">
-        <h3 class="project-title">AI-Assisted Disaster Management App</h3>
-        <p class="project-desc">Developed an AI-powered platform for disaster response, integrating real-time data for improved emergency management.</p>
-    </div>
-</div>
+    <!-- Font Awesome for icons -->
+    
+    <style>
+        #projects {
+            padding: 60px 0;
+            background: linear-gradient(to bottom, #070720, #0f0f2a);
+            position: relative;
+            overflow: hidden;
+        }
 
-<div class="project-card">
-    <div class="project-image" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg');"></div>
-    <div class="project-content">
-        <h3 class="project-title">EcoTrack – Carbon Footprint Tracker</h3>
-        <p class="project-desc">Created a web application to help users track and reduce their carbon footprint, featuring intuitive data analysis and eco-friendly tips.</p>
-    </div>
-</div>
-</div>
-</div>
+        #projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(157, 0, 255, 0.02), transparent 70%);
+            pointer-events: none;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #projects h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 0 15px rgba(157, 0, 255, 0.5);
+            position: relative;
+        }
+
+        #projects h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, rgba(157, 0, 255, 0.8), rgba(0, 102, 255, 0.8));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(15, 15, 35, 0.8);
+            border: 1px solid rgba(157, 0, 255, 0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(157, 0, 255, 0.25);
+            border-color: rgba(157, 0, 255, 0.5);
+        }
+
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #9d00ff, #0066ff);
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .project-image {
+            height: 180px;
+            background-size: 80px;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 2px solid rgba(157, 0, 255, 0.2);
+            background-color: rgba(20, 20, 45, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(157, 0, 255, 0.1), transparent 70%);
+            z-index: 1;
+        }
+
+        .project-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-header {
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            color: #9d00ff;
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 8px rgba(157, 0, 255, 0.3);
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .tech-tag {
+            background: rgba(157, 0, 255, 0.15);
+            color: #b580ff;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(157, 0, 255, 0.3);
+        }
+
+        .project-desc {
+            font-size: 0.95rem;
+            color: #b3b3cc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(157, 0, 255, 0.1);
+            color: #b580ff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(157, 0, 255, 0.2);
+        }
+
+        .project-link:hover {
+            background: rgba(157, 0, 255, 0.25);
+            border-color: rgba(157, 0, 255, 0.4);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(157, 0, 255, 0.2);
+        }
+
+        .view-only {
+            background: rgba(100, 100, 255, 0.1);
+            border-color: rgba(100, 100, 255, 0.3);
+        }
+
+        .view-only:hover {
+            background: rgba(100, 100, 255, 0.25);
+            border-color: rgba(100, 100, 255, 0.5);
+        }
+
+        .demo-link {
+            background: rgba(255, 100, 100, 0.1);
+            border-color: rgba(255, 100, 100, 0.3);
+            color: #ff9999;
+        }
+
+        .demo-link:hover {
+            background: rgba(255, 100, 100, 0.25);
+            border-color: rgba(255, 100, 100, 0.5);
+            color: #ffffff;
+        }
+
+        .project-link i {
+            font-size: 1rem;
+        }
+
+        /* GitHub Showcase Styling */
+        .github-showcase {
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(15, 15, 35, 0.6);
+            border-radius: 15px;
+            border: 1px solid rgba(157, 0, 255, 0.2);
+        }
+
+        .github-showcase h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .github-profile-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(90deg, rgba(157, 0, 255, 0.2), rgba(0, 102, 255, 0.2));
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 auto 30px;
+            max-width: 300px;
+            border: 1px solid rgba(157, 0, 255, 0.3);
+        }
+
+        .github-profile-link:hover {
+            background: linear-gradient(90deg, rgba(157, 0, 255, 0.4), rgba(0, 102, 255, 0.4));
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(157, 0, 255, 0.25);
+        }
+
+        .github-profile-link i {
+            font-size: 1.3rem;
+        }
+
+        .github-repos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .repo-item {
+            background: rgba(20, 20, 45, 0.6);
+            border: 1px solid rgba(157, 0, 255, 0.15);
+            border-radius: 8px;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .repo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(157, 0, 255, 0.2);
+            border-color: rgba(157, 0, 255, 0.3);
+        }
+
+        .repo-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .repo-name i {
+            color: #9d00ff;
+            font-size: 0.9rem;
+        }
+
+        .repo-name a {
+            color: #ffffff;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .repo-name a:hover {
+            color: #9d00ff;
+            text-decoration: underline;
+        }
+
+        .repo-desc {
+            color: #b3b3cc;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .repo-meta {
+            display: flex;
+            gap: 12px;
+        }
+
+        .repo-lang {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            color: #b3b3cc;
+        }
+
+        .repo-lang::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #9d00ff;
+        }
+
+        .repo-lang.js::before {
+            background-color: #f1e05a;
+        }
+
+        .repo-lang.ts::before {
+            background-color: #3178c6;
+        }
+
+        .repo-lang.py::before {
+            background-color: #3572A5;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                max-width: 100%;
+            }
+
+            .github-repos {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 150px;
+            }
+
+            .project-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Animation for cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .repo-item {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+            animation-delay: 0.7s;
+        }
+
+        .repo-item:nth-child(1) { animation-delay: 0.7s; }
+        .repo-item:nth-child(2) { animation-delay: 0.8s; }
+        .repo-item:nth-child(3) { animation-delay: 0.9s; }
+        .repo-item:nth-child(4) { animation-delay: 1.0s; }
+    </style>
+
+    <script>
+        // Add click event listeners to project links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Optional JavaScript for additional interactions
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // If clicking anywhere except the links, find the first link and navigate to it
+                    if (!e.target.closest('a')) {
+                        const firstLink = card.querySelector('.project-link');
+                        if (firstLink && !firstLink.classList.contains('view-only')) {
+                            window.open(firstLink.href, '_blank');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </section>
 
 <!-- Volunteering Section -->
